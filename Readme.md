@@ -12,6 +12,7 @@ Antes de configurar el proyecto, asegúrate de tener instalado:
 
 ## Configuracion del proyecto
 Clonar del repositorio:
+https://github.com/WilliamFlores10/reto-api-test.git
 
 ## Ejecucion de Pruebas
 Puedes ejecutar las pruebas de diferentes maneras:
