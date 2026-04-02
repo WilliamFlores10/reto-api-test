@@ -1,0 +1,43 @@
+name: Karate API Tests - Seleccionable
+
+on:
+  push:
+    branches: [ main ]
+  # Esta es la magia para hacerlo manual
+  workflow_dispatch:
+    inputs:
+      tag_to_test:
+        description: 'Tag de Karate a ejecutar (ej: @happypath)'
+        required: true
+        default: '@happypath'
+        type: choice
+        options:
+          - '@happypath'
+          - '@unhappypath'
+          - '@regresion'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Ejecutar Pruebas
+        # Usamos la variable elegida en el input, o @happypath por defecto si es un push
+        run: |
+          TAG=${{ github.event.inputs.tag_to_test || '@happypath' }}
+          mvn test "-Dkarate.options=--tags $TAG" -Dkarate.parallel=1
+
+      - name: Reporte
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: karate-reports
+          path: target/karate-reports/

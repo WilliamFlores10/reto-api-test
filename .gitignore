@@ -1,0 +1,13 @@
+# Maven - Archivos de compilación y reportes de Karate
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
