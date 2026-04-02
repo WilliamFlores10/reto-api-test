@@ -1,0 +1,17 @@
+{
+  "usuarioActualizado": "Registro alterado com sucesso",
+  "usuarioEliminado": "Registro excluído com sucesso",
+  "usuarioNoEliminado": "Nenhum registro excluído",
+  "emailInvalido": "email deve ser um email válido",
+  "emailEnUso": "Este email já está sendo usado",
+  "emailVacio": "email não pode ficar em branco",
+  "emailNull": "email deve ser uma string",
+  "passwordInvalido": "Email e/ou senha inválidos",
+  "passwordVacio": "password não pode ficar em branco",
+  "passwordNull": "password deve ser uma string",
+  "bodyVacioEmail": "email é obrigatório",
+  "bodyVacioPassword": "password é obrigatório",
+  "usuarioInexistente": "Usuário não encontrado",
+  "usuarioConCarrito": "Não é permitido excluir usuário com carrinho cadastrado",
+  "usuarioExistente": "Este email já está sendo usado"
+}

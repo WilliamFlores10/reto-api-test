@@ -17,7 +17,9 @@ https://github.com/WilliamFlores10/reto-api-test.git
 ## 🧪 Ejecucion de Pruebas
 Puedes ejecutar las pruebas de diferentes maneras:
 1. Ejecutar por Tags (recomendado)
-   * Ejemplo: mvn test "-Dkarate.options=--tags @regresion"
+2. mvn clean test "-Dkarate.options=--tags @regresion" -Dkarate.parallel=1
+3. mvn clean test "-Dkarate.options=--tags @happypath" -Dkarate.parallel=1
+4. mvn clean test "-Dkarate.options=--tags @unhappypath" -Dkarate.parallel=1
 
 ## 📊 Reportes de Ejecución
 Una vez finalizada la ejecución, Karate genera reportes detallados en formato HTML. Puedes encontrarlos en:

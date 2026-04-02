@@ -1,0 +1,642 @@
+04:02:06.260 [main] INFO  com.intuit.karate.Runner - using system property 'karate.options': --tags @regresion
+04:02:07.180 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+04:02:07.187 [main] DEBUG com.intuit.karate.Suite - waiting for 7 features to complete
+04:02:08.304 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:08.558 [main] DEBUG com.intuit.karate - request:
+1 > GET https://serverest.dev/usuarios/
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+
+
+04:02:09.419 [main] DEBUG com.intuit.karate - response time in milliseconds: 856
+1 < 200
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 557ab92ab19341fb1d2f5124cc288f86;o=1
+1 < date: Thu, 02 Apr 2026 09:02:09 GMT
+1 < server: Google Frontend
+1 < Content-Length: 3818
+{
+    "quantidade": 17,
+    "usuarios": [
+        {
+            "nome": "Fulano da Silva",
+            "email": "fulano@qa.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "0uxuPY0cbmQhpEz1"
+        },
+        {
+            "nome": "William Flores",
+            "email": "ela87@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "1fNzjX80OjfYBMkJ"
+        },
+        {
+            "nome": "Tim Flatley DVM",
+            "email": "fake.1775118146878@qa.com.br",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "4giTGjD2Uybu5dVH"
+        },
+        {
+            "nome": "William Flores",
+            "email": "shantelle58@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "8kdGp7kpkHchLMww"
+        },
+        {
+            "nome": "William Flores",
+            "email": "wilhelmina79@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "9vCJxHpctqSqBvA4"
+        },
+        {
+            "nome": "William Flores",
+            "email": "ermelinda29@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "EvrO1QUo0i1nIrck"
+        },
+        {
+            "nome": "William Flores",
+            "email": "xochitl16@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "GYuV9hu9F0htQXAs"
+        },
+        {
+            "nome": "Usuario Teste Automatizado",
+            "email": "teste.1775118146320@qa.com.br",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "HvnNJ5IOL8HafgRL"
+        },
+        {
+            "nome": "Usuario Atualizado",
+            "email": "atualizado.1775118147351@qa.com.br",
+            "password": "novaSenha123",
+            "administrador": "true",
+            "_id": "K1b9CklEYbt05mJ6"
+        },
+        {
+            "nome": "Usuario Para Busca",
+            "email": "busca.1775118147171@qa.com.br",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "KFOktFizjtxTliaW"
+        },
+        {
+            "nome": "William Flores",
+            "email": "tyson88@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "LxWY5GrcS9M6ttb2"
+        },
+        {
+            "nome": "Usuario Duplicado",
+            "email": "duplicado.1775118146959@qa.com.br",
+            "password": "senha123",
+            "administrador": "false",
+            "_id": "QWFYmExFSgpMSsj0"
+        },
+        {
+            "nome": "Novo Usuario via PUT",
+            "email": "novoput.1775118147434@qa.com.br",
+            "password": "senha123",
+            "administrador": "false",
+            "_id": "Qkpb3va0AylPQqel"
+        },
+        {
+            "nome": "William Flores",
+            "email": "devon99@testing.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "YrJVFiPlgdfUjPDq"
+        },
+        {
+            "nome": "Fulano da Silva",
+            "email": "fixture.1775118147784@qa.com.br",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "f5IZP3f3qDnkR81x"
+        },
+        {
+            "nome": "Usuario Comum",
+            "email": "comum.1775118146405@qa.com.br",
+            "password": "senha123",
+            "administrador": "false",
+            "_id": "g7QBxY22kH5G5PeH"
+        },
+        {
+            "nome": "Usuario Para Deletar",
+            "email": "deletar.1775118147653@qa.com.br",
+            "password": "senha123",
+            "administrador": "false",
+            "_id": "m377vpvISY0G3CI7"
+        }
+    ]
+}
+
+04:02:09.452 [main] INFO  com.intuit.karate - [print] {
+  "quantidade": 17,
+  "usuarios": [
+    {
+      "nome": "Fulano da Silva",
+      "email": "fulano@qa.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "0uxuPY0cbmQhpEz1"
+    },
+    {
+      "nome": "William Flores",
+      "email": "ela87@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "1fNzjX80OjfYBMkJ"
+    },
+    {
+      "nome": "Tim Flatley DVM",
+      "email": "fake.1775118146878@qa.com.br",
+      "password": "senha123",
+      "administrador": "true",
+      "_id": "4giTGjD2Uybu5dVH"
+    },
+    {
+      "nome": "William Flores",
+      "email": "shantelle58@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "8kdGp7kpkHchLMww"
+    },
+    {
+      "nome": "William Flores",
+      "email": "wilhelmina79@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "9vCJxHpctqSqBvA4"
+    },
+    {
+      "nome": "William Flores",
+      "email": "ermelinda29@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "EvrO1QUo0i1nIrck"
+    },
+    {
+      "nome": "William Flores",
+      "email": "xochitl16@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "GYuV9hu9F0htQXAs"
+    },
+    {
+      "nome": "Usuario Teste Automatizado",
+      "email": "teste.1775118146320@qa.com.br",
+      "password": "senha123",
+      "administrador": "true",
+      "_id": "HvnNJ5IOL8HafgRL"
+    },
+    {
+      "nome": "Usuario Atualizado",
+      "email": "atualizado.1775118147351@qa.com.br",
+      "password": "novaSenha123",
+      "administrador": "true",
+      "_id": "K1b9CklEYbt05mJ6"
+    },
+    {
+      "nome": "Usuario Para Busca",
+      "email": "busca.1775118147171@qa.com.br",
+      "password": "senha123",
+      "administrador": "true",
+      "_id": "KFOktFizjtxTliaW"
+    },
+    {
+      "nome": "William Flores",
+      "email": "tyson88@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "LxWY5GrcS9M6ttb2"
+    },
+    {
+      "nome": "Usuario Duplicado",
+      "email": "duplicado.1775118146959@qa.com.br",
+      "password": "senha123",
+      "administrador": "false",
+      "_id": "QWFYmExFSgpMSsj0"
+    },
+    {
+      "nome": "Novo Usuario via PUT",
+      "email": "novoput.1775118147434@qa.com.br",
+      "password": "senha123",
+      "administrador": "false",
+      "_id": "Qkpb3va0AylPQqel"
+    },
+    {
+      "nome": "William Flores",
+      "email": "devon99@testing.com",
+      "password": "teste",
+      "administrador": "true",
+      "_id": "YrJVFiPlgdfUjPDq"
+    },
+    {
+      "nome": "Fulano da Silva",
+      "email": "fixture.1775118147784@qa.com.br",
+      "password": "teste123",
+      "administrador": "true",
+      "_id": "f5IZP3f3qDnkR81x"
+    },
+    {
+      "nome": "Usuario Comum",
+      "email": "comum.1775118146405@qa.com.br",
+      "password": "senha123",
+      "administrador": "false",
+      "_id": "g7QBxY22kH5G5PeH"
+    },
+    {
+      "nome": "Usuario Para Deletar",
+      "email": "deletar.1775118147653@qa.com.br",
+      "password": "senha123",
+      "administrador": "false",
+      "_id": "m377vpvISY0G3CI7"
+    }
+  ]
+}
+ 
+04:02:10.015 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 3 of 7 (4 remaining) classpath:features/users/01-Listar-usuarios.feature
+04:02:10.022 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:10.091 [main] DEBUG com.intuit.karate - request:
+1 > POST https://serverest.dev/usuarios
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 96
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"wflores@qa1.com.pe","password":"teste","administrador":"true"}
+
+04:02:11.451 [main] DEBUG com.intuit.karate - response time in milliseconds: 1360
+1 < 201
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 7326d7958c9a0e77bd0d93149dc21497
+1 < date: Thu, 02 Apr 2026 09:02:11 GMT
+1 < server: Google Frontend
+1 < Content-Length: 82
+{
+    "message": "Cadastro realizado com sucesso",
+    "_id": "k4gE3FH2Od0PRSjv"
+}
+
+04:02:11.453 [main] INFO  com.intuit.karate - [print] {
+  "message": "Cadastro realizado com sucesso",
+  "_id": "k4gE3FH2Od0PRSjv"
+}
+ 
+04:02:11.470 [main] INFO  com.intuit.karate - [print] ID guardado en memoria estática: k4gE3FH2Od0PRSjv 
+04:02:11.475 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:11.483 [main] DEBUG com.intuit.karate - request:
+1 > POST https://serverest.dev/usuarios
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 97
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"wflores00@qa.com.pe","password":"teste","administrador":"true"}
+
+04:02:12.820 [main] DEBUG com.intuit.karate - response time in milliseconds: 1336
+1 < 201
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 1df6a5cb5368be52574890587fc0554f
+1 < date: Thu, 02 Apr 2026 09:02:13 GMT
+1 < server: Google Frontend
+1 < Content-Length: 82
+{
+    "message": "Cadastro realizado com sucesso",
+    "_id": "gyTZxHgfr9O7XamB"
+}
+
+04:02:12.823 [main] INFO  com.intuit.karate - [print] ID guardado en memoria estática: gyTZxHgfr9O7XamB 
+04:02:12.826 [main] DEBUG com.intuit.karate - request:
+2 > POST https://serverest.dev/usuarios
+2 > Content-Type: application/json; charset=UTF-8
+2 > Content-Length: 97
+2 > Host: serverest.dev
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"wflores00@qa.com.pe","password":"teste","administrador":"true"}
+
+04:02:14.287 [main] DEBUG com.intuit.karate - response time in milliseconds: 1460
+2 < 400
+2 < access-control-allow-origin: *
+2 < x-dns-prefetch-control: off
+2 < x-frame-options: SAMEORIGIN
+2 < strict-transport-security: max-age=15552000; includeSubDomains
+2 < x-download-options: noopen
+2 < x-content-type-options: nosniff
+2 < x-xss-protection: 1; mode=block
+2 < content-type: application/json; charset=utf-8
+2 < x-cloud-trace-context: dd786553a5d64038e2f45c7d1349299e
+2 < date: Thu, 02 Apr 2026 09:02:14 GMT
+2 < server: Google Frontend
+2 < Content-Length: 53
+{
+    "message": "Este email já está sendo usado"
+}
+
+04:02:14.460 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 4 of 7 (3 remaining) classpath:features/users/02-Registrar-usuario.feature
+04:02:14.467 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:14.473 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv 
+04:02:14.505 [main] DEBUG com.intuit.karate - request:
+1 > GET https://serverest.dev/usuarios/k4gE3FH2Od0PRSjv
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+
+
+04:02:15.871 [main] DEBUG com.intuit.karate - response time in milliseconds: 1365
+1 < 200
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 4a2c538e0edffa2909faf4fb735a2981
+1 < date: Thu, 02 Apr 2026 09:02:16 GMT
+1 < server: Google Frontend
+1 < Content-Length: 152
+{
+    "nome": "William Flores",
+    "email": "wflores@qa1.com.pe",
+    "password": "teste",
+    "administrador": "true",
+    "_id": "k4gE3FH2Od0PRSjv"
+}
+
+04:02:15.872 [main] INFO  com.intuit.karate - [print] {
+  "nome": "William Flores",
+  "email": "wflores@qa1.com.pe",
+  "password": "teste",
+  "administrador": "true",
+  "_id": "k4gE3FH2Od0PRSjv"
+}
+ 
+04:02:15.878 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:15.882 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv 
+04:02:15.886 [main] DEBUG com.intuit.karate - request:
+1 > GET https://serverest.dev/usuarios/8293142229118110
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+
+
+04:02:16.393 [main] DEBUG com.intuit.karate - response time in milliseconds: 505
+1 < 400
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 8b5280c606ed425ee21771cef0dad879
+1 < date: Thu, 02 Apr 2026 09:02:16 GMT
+1 < server: Google Frontend
+1 < Content-Length: 45
+{
+    "message": "Usuário não encontrado"
+}
+
+04:02:16.396 [main] INFO  com.intuit.karate - [print] {
+  "message": "Usuário não encontrado"
+}
+ 
+04:02:16.522 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 5 of 7 (2 remaining) classpath:features/users/03-Buscar-usuario-por-ID.feature
+04:02:16.527 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:16.653 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv gyTZxHgfr9O7XamB 
+04:02:16.662 [main] DEBUG com.intuit.karate - request:
+1 > PUT https://serverest.dev/usuarios/k4gE3FH2Od0PRSjv
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 97
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"jamal51@testing.com","password":"teste","administrador":"true"}
+
+04:02:17.989 [main] DEBUG com.intuit.karate - response time in milliseconds: 1326
+1 < 200
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: e005f1c9c34a22ab75d9e93007893aeb
+1 < date: Thu, 02 Apr 2026 09:02:18 GMT
+1 < server: Google Frontend
+1 < Content-Length: 50
+{
+    "message": "Registro alterado com sucesso"
+}
+
+04:02:17.993 [main] INFO  com.intuit.karate - [print] {
+  "message": "Registro alterado com sucesso"
+}
+ 
+04:02:18.004 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:18.049 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv gyTZxHgfr9O7XamB 
+04:02:18.054 [main] DEBUG com.intuit.karate - request:
+1 > PUT https://serverest.dev/usuarios/2572267155373106
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 96
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"hyun65@testing.com","password":"teste","administrador":"true"}
+
+04:02:18.583 [main] DEBUG com.intuit.karate - response time in milliseconds: 528
+1 < 201
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 6dc3a220976cdc4777635898f46c9a45
+1 < date: Thu, 02 Apr 2026 09:02:18 GMT
+1 < server: Google Frontend
+1 < Content-Length: 82
+{
+    "message": "Cadastro realizado com sucesso",
+    "_id": "UTJfSvSsT099OJ2I"
+}
+
+04:02:18.586 [main] INFO  com.intuit.karate - [print] {
+  "message": "Cadastro realizado com sucesso",
+  "_id": "UTJfSvSsT099OJ2I"
+}
+ 
+04:02:18.592 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:18.620 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv gyTZxHgfr9O7XamB 
+04:02:18.622 [main] DEBUG com.intuit.karate - request:
+1 > PUT https://serverest.dev/usuarios/9999999999999999
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 97
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+{"nome":"William Flores","email":"jamal51@testing.com","password":"teste","administrador":"true"}
+
+04:02:19.954 [main] DEBUG com.intuit.karate - response time in milliseconds: 1331
+1 < 400
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 25177f384056ce347fc83194da87be54;o=1
+1 < date: Thu, 02 Apr 2026 09:02:20 GMT
+1 < server: Google Frontend
+1 < Content-Length: 53
+{
+    "message": "Este email já está sendo usado"
+}
+
+04:02:19.955 [main] INFO  com.intuit.karate - [print] {
+  "message": "Este email já está sendo usado"
+}
+ 
+04:02:19.957 [main] DEBUG com.intuit.karate - request:
+2 > DELETE https://serverest.dev/usuarios/gyTZxHgfr9O7XamB
+2 > Host: serverest.dev
+2 > Connection: Keep-Alive
+2 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+2 > Accept-Encoding: gzip,deflate
+
+
+04:02:20.491 [main] DEBUG com.intuit.karate - response time in milliseconds: 533
+2 < 200
+2 < access-control-allow-origin: *
+2 < x-dns-prefetch-control: off
+2 < x-frame-options: SAMEORIGIN
+2 < strict-transport-security: max-age=15552000; includeSubDomains
+2 < x-download-options: noopen
+2 < x-content-type-options: nosniff
+2 < x-xss-protection: 1; mode=block
+2 < content-type: application/json; charset=utf-8
+2 < x-cloud-trace-context: 1bfcc75a34cf94e276155b4da5926fae
+2 < date: Thu, 02 Apr 2026 09:02:20 GMT
+2 < server: Google Frontend
+2 < Content-Length: 51
+{
+    "message": "Registro excluído com sucesso"
+}
+
+04:02:20.685 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 6 of 7 (1 remaining) classpath:features/users/04-Actualizar-usuario.feature
+04:02:20.692 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:20.697 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv 
+04:02:20.698 [main] DEBUG com.intuit.karate - request:
+1 > DELETE https://serverest.dev/usuarios/k4gE3FH2Od0PRSjv
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+
+
+04:02:21.189 [main] DEBUG com.intuit.karate - response time in milliseconds: 490
+1 < 200
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: 80fcf07127b91e77e1aa4b803be24447
+1 < date: Thu, 02 Apr 2026 09:02:21 GMT
+1 < server: Google Frontend
+1 < Content-Length: 51
+{
+    "message": "Registro excluído com sucesso"
+}
+
+04:02:21.193 [main] INFO  com.intuit.karate - [print] {
+  "message": "Registro excluído com sucesso"
+}
+ 
+04:02:21.199 [main] INFO  com.intuit.karate - karate.env system property was: null 
+04:02:21.201 [main] INFO  com.intuit.karate - [print] ID recuperado de Java: k4gE3FH2Od0PRSjv 
+04:02:21.203 [main] DEBUG com.intuit.karate - request:
+1 > DELETE https://serverest.dev/usuarios/k4gE3FH2Od0PRSjv
+1 > Host: serverest.dev
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.9)
+1 > Accept-Encoding: gzip,deflate
+
+
+04:02:22.540 [main] DEBUG com.intuit.karate - response time in milliseconds: 1337
+1 < 200
+1 < access-control-allow-origin: *
+1 < x-dns-prefetch-control: off
+1 < x-frame-options: SAMEORIGIN
+1 < strict-transport-security: max-age=15552000; includeSubDomains
+1 < x-download-options: noopen
+1 < x-content-type-options: nosniff
+1 < x-xss-protection: 1; mode=block
+1 < content-type: application/json; charset=utf-8
+1 < x-cloud-trace-context: c5a0fa10bd5ad497163b7dfb2cb8374a
+1 < date: Thu, 02 Apr 2026 09:02:22 GMT
+1 < server: Google Frontend
+1 < Content-Length: 46
+{
+    "message": "Nenhum registro excluído"
+}
+
+04:02:22.542 [main] INFO  com.intuit.karate - [print] {
+  "message": "Nenhum registro excluído"
+}
+ 
+04:02:22.599 [main] INFO  com.intuit.karate.Suite - <<pass>> feature 7 of 7 (0 remaining) classpath:features/users/05-Eliminar-usuario.feature

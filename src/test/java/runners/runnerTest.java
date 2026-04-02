@@ -11,7 +11,7 @@ class runnerTest {
     void testParallel() {
         Results results = Runner.path("classpath:features")
                 //.outputCucumberJson(true)
-                .parallel(5);
+                .parallel(1);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 
