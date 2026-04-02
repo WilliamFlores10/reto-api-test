@@ -24,3 +24,6 @@ Puedes ejecutar las pruebas de diferentes maneras:
 ## 📊 Reportes de Ejecución
 Una vez finalizada la ejecución, Karate genera reportes detallados en formato HTML. Puedes encontrarlos en:
 - Ruta: target/karate-reports/karate-summary.html
+
+## 🛠️ Se integro workflows para Github Actions
+Puedes ejecutar desde Github Actions seleccionando los tags designados.
