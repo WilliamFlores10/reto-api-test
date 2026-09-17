@@ -3,7 +3,6 @@ name: Karate API Tests - Seleccionable
 on:
   push:
     branches: [ main ]
-  # Esta es la magia para hacerlo manual
   workflow_dispatch:
     inputs:
       tag_to_test:
@@ -17,27 +16,95 @@ on:
           - '@regresion'
 
 jobs:
-  test:
+
+  # ---------- PASO 1: Preparar el ambiente ----------
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Configurar Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Ejecutar Pruebas
-        # Usamos la variable elegida en el input, o @happypath por defecto si es un push
+      - name: Compilar / descargar dependencias
+        run: mvn -B dependency:go-offline compile
+
+      # Empaquetamos el código ya compilado para pasarlo a los siguientes jobs
+      - name: Subir workspace compilado
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            target/
+            !target/karate-reports/
+
+  # ---------- PASO 2: Desplegar el cambio ----------
+  deploy:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar build del paso anterior
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: target/
+
+      - name: Desplegar a ambiente de pruebas
+        run: |
+          echo "Aquí va tu script/acción real de despliegue"
+          # ej: ./deploy.sh staging
+          # ej: aws ecs update-service ...
+          # ej: kubectl apply -f k8s/staging/
+
+  # ---------- PASO 3: Pruebas ----------
+  test:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Ejecutar Pruebas Karate
         run: |
           TAG=${{ github.event.inputs.tag_to_test || '@happypath' }}
           mvn test "-Dkarate.options=--tags $TAG" -Dkarate.parallel=1
 
-      - name: Reporte
+      - name: Subir reporte de pruebas
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: karate-reports
           path: target/karate-reports/
+
+  # ---------- PASO 4: Últimos pasos ----------
+  finalize:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar reporte
+        uses: actions/download-artifact@v4
+        with:
+          name: karate-reports
+          path: reports/
+
+      - name: Notificar resultado
+        run: |
+          if [ "${{ needs.test.result }}" == "success" ]; then
+            echo "✅ Pruebas exitosas, notificar a Slack/Teams aquí"
+          else
+            echo "❌ Pruebas fallaron, alertar al equipo aquí"
+          fi
+        # Aquí podrías agregar una acción real de Slack, email, etc.
