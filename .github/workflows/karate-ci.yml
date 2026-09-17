@@ -72,7 +72,7 @@ jobs:
       - name: Notificar resultado
         run: |
           if [ "${{ needs.test.result }}" == "success" ]; then
-            echo "✅ Pruebas exitosas, notificar a Slack/Teams aquí"
+            echo "✅ Pruebas exitosas"
           else
-            echo "❌ Pruebas fallaron, alertar al equipo aquí"
+            echo "❌ Pruebas fallaron"
           fi
