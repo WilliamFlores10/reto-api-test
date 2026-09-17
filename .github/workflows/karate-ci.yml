@@ -3,10 +3,12 @@ name: Karate API Tests - Seleccionable
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       tag_to_test:
-        description: 'Tag de Karate a ejecutar (ej: @happypath)'
+        description: 'Tag de Karate a ejecutar '
         required: true
         default: '@happypath'
         type: choice
@@ -17,49 +19,36 @@ on:
 
 jobs:
 
+  # ---------- PASO 1: Preparar el ambiente ----------
   setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-
       - name: Configurar Java
         uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
+      - name: Validar y compilar clases de prueba
+        run: mvn -B test-compile
 
-      - name: Validar y descargar dependencias
-        run: mvn -B dependency:go-offline
-
-  deploy:
+  # ---------- PASO 2: Proceso de Pruebas ----------
+  test:
     needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-
-      - name: Desplegar a ambiente de pruebas
-        run: |
-          echo "Aquí va tu script/acción real de despliegue"
-
-  test:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-
       - name: Configurar Java
         uses: actions/setup-java@v5
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-
       - name: Ejecutar Pruebas Karate
         run: |
           TAG=${{ github.event.inputs.tag_to_test || '@happypath' }}
           mvn test "-Dkarate.options=--tags $TAG" -Dkarate.parallel=1
-
       - name: Subir reporte de pruebas
         if: always()
         uses: actions/upload-artifact@v6
@@ -68,6 +57,7 @@ jobs:
           path: target/karate-reports/
           if-no-files-found: warn
 
+  # ---------- PASO 3: Generar Reporte ----------
   finalize:
     needs: test
     if: always()
@@ -79,7 +69,6 @@ jobs:
           name: karate-reports
           path: reports/
         continue-on-error: true
-
       - name: Notificar resultado
         run: |
           if [ "${{ needs.test.result }}" == "success" ]; then
