@@ -30,17 +30,8 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Compilar / descargar dependencias
-        run: mvn -B dependency:go-offline compile
-
-      # Empaquetamos el código ya compilado para pasarlo a los siguientes jobs
-      - name: Subir workspace compilado
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-output
-          path: |
-            target/
-            !target/karate-reports/
+      - name: Validar y descargar dependencias
+        run: mvn -B dependency:go-offline
 
   # ---------- PASO 2: Desplegar el cambio ----------
   deploy:
@@ -48,12 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Descargar build del paso anterior
-        uses: actions/download-artifact@v4
-        with:
-          name: build-output
-          path: target/
 
       - name: Desplegar a ambiente de pruebas
         run: |
@@ -87,6 +72,7 @@ jobs:
         with:
           name: karate-reports
           path: target/karate-reports/
+          if-no-files-found: warn
 
   # ---------- PASO 4: Últimos pasos ----------
   finalize:
@@ -99,6 +85,7 @@ jobs:
         with:
           name: karate-reports
           path: reports/
+        continue-on-error: true
 
       - name: Notificar resultado
         run: |
