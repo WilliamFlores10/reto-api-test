@@ -62,6 +62,8 @@ jobs:
     needs: test
     if: always()
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # necesario para que la acción pueda crear/actualizar la rama gh-pages
     steps:
       - name: Descargar reporte
         uses: actions/download-artifact@v7
@@ -69,6 +71,14 @@ jobs:
           name: karate-reports
           path: reports/
         continue-on-error: true
+
+      - name: Publicar reporte en GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports/
+          
       - name: Notificar resultado
         run: |
           if [ "${{ needs.test.result }}" == "success" ]; then
