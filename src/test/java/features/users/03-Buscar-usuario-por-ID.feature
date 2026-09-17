@@ -7,19 +7,19 @@ Feature: Reto Automatizacion API - Buscar Usuarios por ID
     * def actualizarSchema = read('classpath:resource/req/schema/schema-actualizar.json')
     #llamar a DataStore para la funcion de envio de ID
     * def DataStore = Java.type('helpers.DataStore')
-    * def idDesdeJava = DataStore.getSharedId()
-    * print 'ID recuperado de Java:', idDesdeJava
+    * def id = DataStore.getSharedId()
+    * print 'ID recuperado de Java:', id
     #Llamar a DataGenerator funcion Datafaker para generar datos aleatorios
     * def dataGenerator = Java.type('helpers.DataGenerator')
     * def randomId = dataGenerator.getRandomId()
 
   @happypath
   Scenario: Buscar un usuario específico por su ID
-    Given url baseUrl + '/usuarios/' + idDesdeJava
+    Given url baseUrl + '/usuarios/' + id
     When method get
     Then status 200
     * print response
-    And match response._id == idDesdeJava
+    And match response._id == id
 
   @unhappypath
   Scenario: Buscar un usuario específico por un ID erroneo - NO OK

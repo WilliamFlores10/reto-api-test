@@ -2,28 +2,28 @@
 Feature: Reto Automatizacion API - Actualizar Usuarios
 
   Background:
-    #Llamar al archivo Body, Msg Errores esperados y Schema desde Json
+    # Llamar al archivo Body, Msg Errores esperados y Schema desde Json
     * def body = read('classpath:resource/req/body/user.json')
     * def msg = read('classpath:helpers/error-response.json')
     * def actualizarSchema = read('classpath:resource/req/schema/schema-actualizar.json')
-    #Llamar a DataGenerator funcion Datafaker para generar datos aleatorios
+    # Llamar a DataGenerator funcion Datafaker para generar datos aleatorios
     * def dataGenerator = Java.type('helpers.DataGenerator')
     * def randomId = dataGenerator.getRandomId()
     * def randomEmail = dataGenerator.getRandomEmail()
-    #llamar a DataStore para la funcion de envio de ID
+    # Llamar a DataStore para la funcion de envio de ID
     * def DataStore = Java.type('helpers.DataStore')
-    * def idDesdeJava = DataStore.getSharedId()
-    * def idDesdeJava2 = DataStore.getSharedId2()
-    * print 'ID recuperado de Java:', idDesdeJava , idDesdeJava2
-    * def emailDesdeJava = DataStore.getSharedEmail()
+    * def id1 = DataStore.getSharedId()
+    * def id2 = DataStore.getSharedId2()
+    * print 'ID recuperado de Java:', id1 , id2
+    * def email = DataStore.getSharedEmail()
     # Si es null, seteamos un valor por defecto
-    * if (emailDesdeJava == null) karate.set('emailFinal', 'wflores00@qa.com.pe')
-    # Si NO es null, usamos el de Java
-    * if (emailDesdeJava != null) karate.set('emailFinal', emailDesdeJava)
+    * if (email == null) karate.set('emailFinal', 'wflores00@qa.com.pe')
+    # Si no es null, usamos el de Java
+    * if (email != null) karate.set('emailFinal', email)
 
   @happypath
   Scenario: Actualizar la información de un usuario existente
-    Given url baseUrl + '/usuarios/' + idDesdeJava
+    Given url baseUrl + '/usuarios/' + id1
     * set body.email = randomEmail
     * request body
     When method put
@@ -56,7 +56,7 @@ Feature: Reto Automatizacion API - Actualizar Usuarios
     * match response.message == msg.usuarioExistente
 
      #eliminar la data generada
-    Given url baseUrl + '/usuarios/' + idDesdeJava2
+    Given url baseUrl + '/usuarios/' + id2
     When method delete
     Then status 200
 

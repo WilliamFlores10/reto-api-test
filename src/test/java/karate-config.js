@@ -1,6 +1,6 @@
 function fn() {
-  var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
+  var env = karate.env;
+  karate.log('karate.env entorno:', env);
   if (!env) {
     env = 'dev'; //Entorno por defectp
   }
@@ -9,16 +9,22 @@ function fn() {
   var config = {
     env: env,
     baseUrl: 'https://serverest.dev',
-    defaultHeaders: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+    defaultHeaders: karate.read('classpath:resource/req/headers/headers.json')
   }
-  // Ajustar variables segun ambiente
+  // Ajustar variables segun ambiente ()
   if (env == 'dev') {
-    // customize
     config.baseUrl = 'https://serverest.dev';
   } else if (env == 'qa') {
-    // customize
     config.baseUrl = 'https://serverest.dev';
-
+  } else if (env == 'prod') {
+    config.baseUrl = 'https://serverest.dev';
   }
+
+  // Llamado al token cada 4 minutos
+  karate.configure('callSingleCache', { minutes: 4 });
+  var loginResult = karate.callSingle('classpath:features/login/login-happypath.feature', config);
+  config.authToken = loginResult.token;
+  config.defaultHeaders['Authorization'] = 'Bearer ' + loginResult.token;
+
   return config;
 }
