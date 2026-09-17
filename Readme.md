@@ -32,3 +32,5 @@ Una vez finalizada la ejecución, Karate genera reportes detallados en formato H
 
 ## 🛠️ Se integro workflows para Github Actions
 Puedes ejecutar desde Github Actions seleccionando los tags designados.
+Tambien puedes descargar la ejecucion de pruebas y visualizarlo desde githubpages desde la siguiente ruta.
+"https://williamflores10.github.io/reto-api-test/"
