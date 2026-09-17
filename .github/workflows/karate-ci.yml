@@ -72,6 +72,18 @@ jobs:
           path: reports/
         continue-on-error: true
 
+      - name: Preparar index.html para GitHub Pages
+        if: always()
+        run: |
+          echo "Archivos disponibles en reports/:"
+          ls -la reports/
+          if [ -f reports/karate-summary.html ]; then
+            cp reports/karate-summary.html reports/index.html
+            echo "index.html creado correctamente"
+          else
+            echo "ADVERTENCIA: no se encontró karate-summary.html, revisa el listado de arriba"
+          fi
+
       - name: Publicar reporte en GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
