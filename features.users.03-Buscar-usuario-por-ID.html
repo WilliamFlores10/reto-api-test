@@ -21,7 +21,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   capture_pageview:false,
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
-    posthog.capture("report_feature",{distinct_id:"e595183b-b64b-4776-bef8-80073a47a825",karate_version:"1.5.1",karate_meta:null});
+    posthog.capture("report_feature",{distinct_id:"b0a92dd1-f041-4d52-98ea-0b30378f8522",karate_version:"1.5.1",karate_meta:null});
   }
 });
 </script>
@@ -38,7 +38,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-pass" class="bg-success">2</div>
       <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
@@ -49,13 +49,16 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-09-17 06:53:50 AM</div>
+    <div>2026-09-24 10:47:15 PM</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
             <a href="#[1:17]"><span>[1:17]</span> <span>Buscar un usuario específico por su ID</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:25]"><span>[2:25]</span> <span>Buscar un usuario específico por un ID erroneo - NO OK</span></a>
           </div>
         </div>
       </div>
@@ -81,7 +84,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>147</span>
+              <span>ms:</span>&nbsp;<span>182</span>
             </div>
           </div>
           <div class="step-row">
@@ -120,10 +123,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.6">06:53:50.761 karate.env entorno: null 
-06:53:50.762 &gt;&gt; lock acquired, begin callSingle: classpath:features/login/login-happypath.feature
-06:53:50.763 callSingleCache hit: target/classpath-features-login-login-happypath.feature.txt
-06:53:50.763 &lt;&lt; lock released, cached callSingle: classpath:features/login/login-happypath.feature
+  <div class="preformatted" data-parent="0.6">22:47:14.803 karate.env entorno: null 
+22:47:14.804 &gt;&gt; lock acquired, begin callSingle: classpath:features/login/login-happypath.feature
+22:47:14.804 callSingleCache hit: target/classpath-features-login-login-happypath.feature.txt
+22:47:14.804 &lt;&lt; lock released, cached callSingle: classpath:features/login/login-happypath.feature
 </div>   
 
   
@@ -206,7 +209,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def id = DataStore.getSharedId()</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -243,7 +246,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.11">06:53:50.767 [print] ID recuperado de Java: bVsKgPULdyTE9WTy 
+  <div class="preformatted" data-parent="0.11">22:47:14.809 [print] ID recuperado de Java: wxGP0MOMKDw2KfFC 
 </div>   
 
   
@@ -298,7 +301,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def randomId = dataGenerator.getRandomId()</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">20</div>
   </div>
 
    
@@ -354,7 +357,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">123</div>
+    <div class="time-cell passed">154</div>
   </div>
 
    
@@ -363,15 +366,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.19">06:53:50.786 request:
-1 &gt; GET https://serverest.dev/usuarios/bVsKgPULdyTE9WTy
+  <div class="preformatted" data-parent="0.19">22:47:14.833 request:
+1 &gt; GET https://serverest.dev/usuarios/wxGP0MOMKDw2KfFC
 1 &gt; Host: serverest.dev
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.12.1)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-06:53:50.908 response time in milliseconds: 120
+22:47:14.985 response time in milliseconds: 151
 1 &lt; 200
 1 &lt; access-control-allow-origin: *
 1 &lt; x-dns-prefetch-control: off
@@ -381,8 +384,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; x-content-type-options: nosniff
 1 &lt; x-xss-protection: 1; mode=block
 1 &lt; content-type: application/json; charset=utf-8
-1 &lt; x-cloud-trace-context: 2b328704bf228cb790401f78d0b1a26e
-1 &lt; date: Thu, 17 Sep 2026 06:53:50 GMT
+1 &lt; x-cloud-trace-context: 48d4ce3a0bfe57e941688d4a9aa530a4
+1 &lt; date: Thu, 24 Sep 2026 22:47:14 GMT
 1 &lt; server: Google Frontend
 1 &lt; Content-Length: 152
 {
@@ -390,7 +393,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     &quot;email&quot;: &quot;wflores@qa1.com.pe&quot;,
     &quot;password&quot;: &quot;teste&quot;,
     &quot;administrador&quot;: &quot;true&quot;,
-    &quot;_id&quot;: &quot;bVsKgPULdyTE9WTy&quot;
+    &quot;_id&quot;: &quot;wxGP0MOMKDw2KfFC&quot;
 }
 
 </div>   
@@ -449,12 +452,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.21">06:53:50.910 [print] {
+  <div class="preformatted" data-parent="0.21">22:47:14.987 [print] {
   &quot;nome&quot;: &quot;William Flores&quot;,
   &quot;email&quot;: &quot;wflores@qa1.com.pe&quot;,
   &quot;password&quot;: &quot;teste&quot;,
   &quot;administrador&quot;: &quot;true&quot;,
-  &quot;_id&quot;: &quot;bVsKgPULdyTE9WTy&quot;
+  &quot;_id&quot;: &quot;wxGP0MOMKDw2KfFC&quot;
 }
  
 </div>   
@@ -474,6 +477,450 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response._id == id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:25]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">regresion</a><a class="badge badge-primary" href="karate-tags.html">unhappypath</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:25]</span>
+                <span class="scenario-name">Buscar un usuario específico por un ID erroneo - NO OK</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>112</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:25]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#llamar schema y msg desde json</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def msg = read(&#39;classpath:helpers/error-response.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.6">22:47:14.993 karate.env entorno: null 
+22:47:14.994 &gt;&gt; lock acquired, begin callSingle: classpath:features/login/login-happypath.feature
+22:47:14.994 callSingleCache hit: target/classpath-features-login-login-happypath.feature.txt
+22:47:14.994 &lt;&lt; lock released, cached callSingle: classpath:features/login/login-happypath.feature
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref bg-step">7</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def actualizarSchema = read(&#39;classpath:resource/req/schema/schema-actualizar.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#llamar a DataStore para la funcion de envio de ID</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref bg-step">9</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def DataStore = Java.type(&#39;helpers.DataStore&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref bg-step">10</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def id = DataStore.getSharedId()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref bg-step">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;ID recuperado de Java:&#39;, id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.11">22:47:14.997 [print] ID recuperado de Java: wxGP0MOMKDw2KfFC 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Llamar a DataGenerator funcion Datafaker para generar datos aleatorios</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref bg-step">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def dataGenerator = Java.type(&#39;helpers.DataGenerator&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:25]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref bg-step">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def randomId = dataGenerator.getRandomId()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url baseUrl + &#39;/usuarios/&#39; + randomId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">106</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.27">22:47:15.001 request:
+1 &gt; GET https://serverest.dev/usuarios/2172425444104773
+1 &gt; Host: serverest.dev
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.12.1)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+22:47:15.105 response time in milliseconds: 103
+1 &lt; 400
+1 &lt; access-control-allow-origin: *
+1 &lt; x-dns-prefetch-control: off
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; strict-transport-security: max-age=15552000; includeSubDomains
+1 &lt; x-download-options: noopen
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-xss-protection: 1; mode=block
+1 &lt; content-type: application/json; charset=utf-8
+1 &lt; x-cloud-trace-context: bf1e464dc3758a374dac221e011188bf
+1 &lt; date: Thu, 24 Sep 2026 22:47:15 GMT
+1 &lt; server: Google Frontend
+1 &lt; Content-Length: 45
+{
+    &quot;message&quot;: &quot;Usuário não encontrado&quot;
+}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.29">22:47:15.106 [print] {
+  &quot;message&quot;: &quot;Usuário não encontrado&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == actualizarSchema</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match response.message == msg.usuarioInexistente</span>
       </div>
     </div>
     <div class="time-cell passed">1</div>
